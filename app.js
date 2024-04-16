@@ -26,18 +26,6 @@ firebase.initializeApp(firebaseConfig);
 
 var db = firebase.database();
 
-document.getElementById("sign-up").addEventListener("click", function () {
-    let email = document.getElementById("email").value;
-    let password = document.getElementById("password").value;
-
-    // Assuming 'username' is defined and accessible in this scope
-    db.ref("users/" + "Users").set({
-        email: email,
-        password: password
-    });
-    alert("User saved successfully!");
-
-});
 
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("login").addEventListener("click", function() {
