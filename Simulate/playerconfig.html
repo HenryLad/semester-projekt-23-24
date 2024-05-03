@@ -1,23 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>FB Manager</title>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
    <link rel="stylesheet" href="simulate.css">
 </head>
+
 <body>
-   
+
    <div class="container mt-5">
       <h1 class="mb-4">Squad Management</h1>
    </div>
 
-   <div id="pitchdesgin">
-      
-      <img src="/Images/picture_football_pitch.jpg" alt="picture of a football pitch">   
-   </div>   
+   <div id="pitchdesgin" class="container">
+      <div class="football-pitch">
+         
+         <!-- Add more player divs as needed -->
+      </div>
+      <div class="player-form mt-3">
+         <div class="form-group">
+            <input type="text" id="player-name" class="form-control" placeholder="Player Name">
+         </div>
+         <button onclick="addPlayer()" class="btn btn-primary">Add Player</button>
+      </div>
+      <script src="sim.js"></script>
+   </div>
 
-   
-<script src="app.js"></script>   
+
+   <script src="app.js"></script>
 </body>
+
 </html>

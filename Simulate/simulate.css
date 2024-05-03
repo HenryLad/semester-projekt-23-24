@@ -8,3 +8,27 @@ div img{
    rotate: 90deg;
    padding-top: 4rem;
 }
+.football-pitch {
+   width: 600px;
+   height: 400px;
+   background-color: green;
+   position: relative;
+   margin: 20px auto;
+}
+.player {
+   width: 100px; /* Adjust the width as needed */
+   height: 100px; /* Adjust the height as needed */
+   background-color: white;
+   position: absolute;
+   border: 1px solid black; /* Add border for better visibility */
+   border-radius: 5%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+/* Style for player names */
+.player-name {
+   text-align: center;
+}
+
