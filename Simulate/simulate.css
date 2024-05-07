@@ -31,4 +31,18 @@ div img{
 .player-name {
    text-align: center;
 }
+.style-dropdown-btn {
+   background-color: rgb(33, 37, 41) !important;
+}
 
+.nav-link-sign {
+   border: 1px solid;
+   border-color: rgb(33, 37, 41);
+}
+header {
+   margin: 0;
+}
+
+header div {
+   padding: 2rem;
+}

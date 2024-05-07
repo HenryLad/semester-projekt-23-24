@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", checkLogin());
+document.addEventListener("DOMContentLoaded", checkLogin(), init());
 function checkLogin()
 {
    let isLoggedIn = localStorage.getItem('logIn') === 'true';
@@ -6,6 +6,10 @@ function checkLogin()
    if (!isLoggedIn) {
        window.location.href = "../SignIn.html";
    }
+}
+function init()
+{
+    document.getElementById("btn-profile").innerHTML = 'Hello ' + localStorage.getItem("email");
 }
 
 function logout()

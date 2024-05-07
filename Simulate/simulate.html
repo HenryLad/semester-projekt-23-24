@@ -1,18 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Squad Management</title>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="sim.js"></script>
+    <script src="../LogedIn/nav-bar.js" defer></script>
+    <style>
+        .style-dropdown-btn {
+            background-color: rgb(33, 37, 41) !important;
+        }
+
+        .nav-link-sign {
+            border: 1px solid;
+            border-color: rgb(33, 37, 41);
+        }
+    </style>
 </head>
+
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Football Manager</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../Simulate/simulate.html">Simulate Game</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Guess the Footballer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Finances</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item" id="btn-sign-in">
+                        <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle nav-link-sign style-dropdown-btn"
+                                type="button" data-bs-toggle="dropdown" aria-expanded="false" id="btn-profile">
+
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-item">My Profile</li>
+                                <li><a class="dropdown-item" id="btn-logout" href="#"
+                                        onclick="logout(); return false;">Logout</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <div class="container mt-5">
         <h1 class="mb-4">Squad Management</h1>
-        
-        
+
+
         <!-- Squad Form -->
         <div class="card mb-4">
             <div class="card-header">
@@ -36,20 +87,24 @@
                 </form>
             </div>
         </div>
-        
+
         <!-- Display Squads -->
         <div class="card">
             <div class="card-header">
                 Squads
             </div>
             <div class="card-body" id="card-body">
-                
+
             </div>
         </div>
     </div>
 
     <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
     <script src="sim.js"></script>
     <!-- Your custom JavaScript can be added here -->
 </body>
+
 </html>

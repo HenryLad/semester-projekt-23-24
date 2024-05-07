@@ -108,3 +108,16 @@ input[type="checkbox"] {
     background-color: #000;
 }
 
+header {
+    margin: 0;
+}
+header div{
+    padding: 2rem;
+}
+.container {
+    margin-top: 50px;
+}
+.nav-link-sign{
+   border: 1px solid ;
+   border-color: rgb(33, 37, 41);
+}
