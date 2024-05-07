@@ -25,12 +25,13 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 var db = firebase.database();
-let logIn = false;
 
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("login").addEventListener("click", function() {
         var email = document.getElementById("email").value;
         var password = document.getElementById("password").value;
+        localStorage.setItem("email", email);
+        
 
         var user_ref = db.ref("users/" + "Users");
         user_ref.on("value", function (snapshot) {
@@ -38,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
             if (data.email == email && data.password == password) {
                 console.log("Login successful");
-                localStorage.setItem("logIn", true);
+                localStorage.setItem("logIn", 'true');
                 window.location.href = "/LogedIn/index.html";
             }
             else {

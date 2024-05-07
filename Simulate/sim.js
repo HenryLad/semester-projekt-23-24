@@ -1,10 +1,10 @@
-let isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+document.addEventListener("DOMContentLoaded", () => {
+   let isLoggedIn = localStorage.getItem('logIn') === 'true';
 // At the beginning of the file
 if (!isLoggedIn) {
-    window.location.href = "../index.html";
+    window.location.href = "../SignIn.html";
 }
-
-if(logIn == false){window.location.href = "../index.html";}
+})
 document.getElementById("addsquad").addEventListener("click", function () {
    event.preventDefault();
    let squadname = document.getElementById("squadName").value;

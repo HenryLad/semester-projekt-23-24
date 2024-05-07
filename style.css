@@ -96,6 +96,12 @@ input[type="checkbox"] {
 
 .google {
     background-color: #ea4335;
+
+}
+.google a{
+    color: #fff;
+    text-decoration: none;
+
 }
 
 .apple {
