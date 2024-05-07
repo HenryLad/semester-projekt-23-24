@@ -25,7 +25,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 var db = firebase.database();
-
+let logIn = false;
 
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("login").addEventListener("click", function() {
@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
             if (data.email == email && data.password == password) {
                 console.log("Login successful");
+                localStorage.setItem("logIn", true);
                 window.location.href = "/LogedIn/index.html";
             }
             else {

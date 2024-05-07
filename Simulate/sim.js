@@ -1,4 +1,10 @@
+let isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+// At the beginning of the file
+if (!isLoggedIn) {
+    window.location.href = "../index.html";
+}
 
+if(logIn == false){window.location.href = "../index.html";}
 document.getElementById("addsquad").addEventListener("click", function () {
    event.preventDefault();
    let squadname = document.getElementById("squadName").value;
@@ -24,31 +30,37 @@ document.getElementById("addsquad").addEventListener("click", function () {
    `;
 
 });
+
+let players = [];
 function addPlayer() {
-   const playerName = document.getElementById('player-name').value;
-   if (playerName.trim() === '') {
-       alert('Please enter a player name');
-       return;
+   var number = document.getElementById("cfg_number").value;
+   var name = document.getElementById("cfg_name").value;
+   let squad = document.getElementById("body_player_add");
+   let playercount = document.getElementById("playerCount").value;
+
+   if(number == "" || name == "") {
+      alert("Please enter a valid number and name");
+      return;
    }
-   const playerDiv = document.createElement('div');
-   playerDiv.className = 'player';
-   
-   // Create a container for the player's name
-   const playerNameDiv = document.createElement('div');
-   playerNameDiv.className = 'player-name';
-   playerNameDiv.textContent = playerName;
-   
-   playerDiv.appendChild(playerNameDiv);
-   
-   // Randomly position the player on the pitch
-   const pitchWidth = document.querySelector('.football-pitch').clientWidth;
-   const pitchHeight = document.querySelector('.football-pitch').clientHeight;
-   const randomX = Math.floor(Math.random() * (pitchWidth - 100)); // Adjust for square size
-   const randomY = Math.floor(Math.random() * (pitchHeight - 100)); // Adjust for square size
-   playerDiv.style.left = randomX + 'px';
-   playerDiv.style.top = randomY + 'px';
-   
-   // Append player to the pitch
-   document.querySelector('.football-pitch').appendChild(playerDiv);
+   if(players.length >= playercount){
+      alert("You have reached the maximum number of players");
+      return;
+   }
+   if(players.find(player => player.number == number)){
+      alert("Player number already exists");
+      return;
+   }
+
+   squad.innerHTML += `
+   <div class="row">
+      <div class="col-12">
+         <div class="card">
+            <div class="card-body">
+               <p class="card-text"> Name: ${name} Number: ${number}</p>
+            </div>
+         </div>
+      </div>
+     `;
 }
 
+document.getElementById("btn_player_submit").addEventListener("click",  addPlayer());
