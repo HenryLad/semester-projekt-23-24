@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
         var email = document.getElementById("email").value;
         var password = document.getElementById("password").value;
         localStorage.setItem("email", email);
-        
+        localStorage.setItem("LogIn", 'false')
 
         var user_ref = db.ref("users/" + "Users");
         user_ref.on("value", function (snapshot) {

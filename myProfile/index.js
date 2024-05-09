@@ -39,7 +39,7 @@ function configure() {
     let inputLocation = document.getElementById("inputLocation").value;
     let inputEmail = document.getElementById("inputEmail").value;
     let inputPhone = document.getElementById("inputPhone").value;
-
+    
     // Update only the entered string and keep other values unchanged
     if (inputName) {
         localStorage.setItem("name", inputName);
@@ -51,6 +51,7 @@ function configure() {
         localStorage.setItem("location", inputLocation);
     }
     if (inputEmail) {
+        if(!inputEmail.includes("@")){alert("Please enter a valid email address"); return;}
         localStorage.setItem("email_input", inputEmail);
     }
     if (inputPhone) {
