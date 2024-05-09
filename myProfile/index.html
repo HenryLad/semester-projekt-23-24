@@ -1,11 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+   <script src="index.js" defer></script>
 </head>
+<style>
+   .style-dropdown-btn{
+            background-color: rgb(33, 37, 41) !important;
+        }
+        .nav-link-sign {
+            border: 1px solid;
+            border-color: rgb(33, 37, 41);
+        }
+        .nav-link-sign:hover {
+            border: 1px solid rgb(33, 37, 41);
+            border-radius: 5px;
+            text-align: center;
+            transition-duration: 0.5s;
+        }
+        .nav-link-sign:not(:hover)
+        {
+            border: 1px solid rgb(33, 37, 41);
+            border-radius: 5px;
+            text-align: center;
+        }
+</style>
 <body>
-   
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+          <a class="navbar-brand" href="#">Football Manager</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+              <ul class="navbar-nav me-auto">
+                  <li class="nav-item">
+                      <a class="nav-link" href="../Simulate/simulate.html">Simulate Game</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Guess the Footballer</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Finances</a>
+                  </li>
+              </ul>
+              <ul class="navbar-nav">
+                  <li class="nav-item" id="btn-sign-in">
+                      <div class="dropdown">
+                          <button class="btn btn-primary dropdown-toggle nav-link-sign style-dropdown-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="btn-profile">
+                            
+                          </button>
+                          <ul class="dropdown-menu">
+                           <li><a href="../myProfile/index.html" class="dropdown-item">My Profile</a></li>
+                            <li><a class="dropdown-item" id="btn-logout" href="#" onclick="logout(); return false;">Logout</a></li>
+                          </ul>
+                        </div>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <div class="text-center">
+            <img src="../Images/picture_default_profile.jpg" class="img-fluid rounded-circle mb-3" alt="Profile Picture">
+            <h4 class="card-title" id="user_name"></h4>
+            <p class="card-text" id="user_bio"></p>
+            <p class="card-text" id="user_Location"></p>
+          </div>
+          <hr>
+          <div>
+            <h5>Contact Information</h5>
+            <p id="user_email">Email: </p>
+            <p id="user_phone">Phone:</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Edit Profile</h4>
+          <!-- Add form fields for editing profile -->
+          <form>
+            <div class="form-group">
+              <label for="inputName">Name</label>
+              <input type="text" class="form-control" id="inputName" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+              <label for="inputBio">Bio</label>
+              <textarea class="form-control" id="inputBio" rows="3" placeholder="Enter your bio"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="inputLocation">Location</label>
+              <input type="text" class="form-control" id="inputLocation" placeholder="Enter your location">
+            </div>
+            <div class="form-group">
+               <label for="inputLocation">Email</label>
+               <input type="text" class="form-control" id="inputEmail" placeholder="Enter your Email">
+             </div>
+             <div class="form-group">
+               <label for="inputLocation">Phone</label>
+               <input type="text" class="form-control" id="inputPhone" placeholder="Enter your Phone">
+             </div>
+            <!-- Add more form fields for customization -->
+            <button type="submit" class="btn btn-primary" id="btn-save">Save Changes</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
 </body>
 </html>
