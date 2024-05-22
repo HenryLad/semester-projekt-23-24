@@ -26,25 +26,26 @@ firebase.initializeApp(firebaseConfig);
 
 var db = firebase.database();
 
-document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("login").addEventListener("click", function() {
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("login").addEventListener("click", function () {
         var email = document.getElementById("email").value;
         var password = document.getElementById("password").value;
         localStorage.setItem("email", email);
         localStorage.setItem("LogIn", 'false')
 
-        var user_ref = db.ref("users/" + "Users");
-        user_ref.on("value", function (snapshot) {
-            let data = snapshot.val();
+        var users = ["Users", "david", "jan"]; // Replace this with your array of users
 
-            if (data.email == email && data.password == password) {
-                console.log("Login successful");
-                localStorage.setItem("logIn", 'true');
-                window.location.href = "/LogedIn/index.html";
-            }
-            else {
-                alert("Invalid login credentials");
-            }
+        users.forEach(user => {
+            var user_ref = db.ref("users/" + user);
+            user_ref.on("value", function (snapshot) {
+                let data = snapshot.val();
+
+                if (data && data.email == email && data.password == password) {
+                    console.log("Login successful");
+                    localStorage.setItem("logIn", 'true');
+                    window.location.href = "/LogedIn/index.html";
+                }
+            });
         });
     });
 });
