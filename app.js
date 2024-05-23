@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
         localStorage.setItem("email", email);
         localStorage.setItem("LogIn", 'false')
 
-        var users = ["Users", "david", "jan"]; // Replace this with your array of users
+        var users = ["henry", "david", "jan"]; // Replace this with your array of users
 
         users.forEach(user => {
             var user_ref = db.ref("users/" + user);
