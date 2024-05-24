@@ -14,6 +14,120 @@
             text-align: center;
             transition-duration: 0.5s;
         }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+        .header {
+            margin-top: 50px;
+        }
+        .header h1 {
+            font-size: 2.5em;
+            color: #444;
+        }
+        .header p {
+            font-size: 1.2em;
+            color: #666;
+            max-width: 600px;
+            margin: auto;
+        }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1000px;
+            margin: 40px 0;
+        }
+        .feature {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+        }
+        .feature img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 10px;
+        }
+        .feature h3 {
+            color: #333;
+            font-size: 1.4em;
+        }
+        .feature p {
+            color: #777;
+            font-size: 1em;
+        }
+        .cta-section {
+            background: #222;
+            color: #fff;
+            padding: 40px 20px;
+            width: 100%;
+            text-align: center;
+        }
+        .cta-section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .cta-section p {
+            font-size: 1.2em;
+            max-width: 600px;
+            margin: auto;
+            margin-bottom: 20px;
+        }
+        .cta-button {
+            background: #28a745;
+            color: #fff;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+        }
+        .testimonials {
+            background: #fff;
+            padding: 40px 20px;
+            width: 100%;
+            text-align: center;
+        }
+        .testimonial {
+            max-width: 800px;
+            margin: 20px auto;
+            text-align: left;
+        }
+        .testimonial p {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        .testimonial .author {
+            font-weight: bold;
+            color: #333;
+        }
+        .footer {
+            margin-top: auto;
+            padding: 20px;
+            background: #222;
+            color: #fff;
+            text-align: center;
+            width: 100%;
+        }
+        .footer p {
+            margin: 0;
+            font-size: 0.9em;
+        }
    </style>
 </head>
 <body>
@@ -24,17 +138,6 @@
               <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-              <ul class="navbar-nav me-auto">
-                  <li class="nav-item">
-                      <a class="nav-link" href="#">Simulate Game</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="#">Guess the Footballer</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="#">Finances</a>
-                  </li>
-              </ul>
               <ul class="navbar-nav">
                   <li class="nav-item">
                       <a class="nav-link nav-link-sign" href="/SignIn.html">Sign In</a>
@@ -44,10 +147,49 @@
       </div>
   </nav>
 
-  <div class="container text-center">
-      <h2>Welcome to Football Manager</h2>
-      
-  </div>
+  <div class="container">
+    <div class="header">
+        <h1>Welcome to Football Manager</h1>
+        <p>Manage your team, simulate games, and test your football knowledge! Explore the ultimate platform for football enthusiasts and take your management skills to the next level.</p>
+    </div>
+    <div class="features">
+        <div class="feature">
+            <img src="./Images/picture_squad_image.jpeg" alt="Simulate Game">
+            <h3>Simulate Game</h3>
+            <p>Run simulations and see how your strategies play out. Analyze results and improve your game tactics.</p>
+        </div>
+        <div class="feature">
+            <img src="./Images/picture_guess_thefootballer.jpeg" alt="Guess the Footballer">
+            <h3>Guess the Footballer</h3>
+            <p>Challenge yourself to recognize football stars. Test your knowledge and see how many players you can identify.</p>
+        </div>
+        <div class="feature">
+            <img src="./Images/picture_money.jpeg" alt="Finances">
+            <h3>Manage Finances</h3>
+            <p>Keep track of your team's budget and expenses. Make smart financial decisions to ensure your team's success.</p>
+        </div>
+    </div>
+    <div class="cta-section">
+        <h2>Get Started Today!</h2>
+        <p>Join a lot  of football managers and take your team to the top. Sign in now and start your journey.</p>
+        <a href="SignIn.html" class="cta-button">Sign In here</a>
+    </div>
+    <div class="testimonials">
+        <h2>What Our Users Say</h2>
+        <div class="testimonial">
+            <p>"Football Manager has completely transformed the way I manage my team. The simulations are incredibly realistic and the financial tools are invaluable." - <span class="author">Pep Guradiula</span></p>
+        </div>
+        <div class="testimonial">
+            <p>"I love the Guess the Footballer feature! It's a fun way to test my knowledge and learn more about players from around the world." - <span class="author">Jürgen Klopp</span></p>
+        </div>
+        <div class="testimonial">
+            <p>"The training planner is fantastic. I've seen a significant improvement in my team's performance since I started using it." - <span class="author">Harry Magiure</span></p>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <p>&copy; 2024 Football Manager. All rights reserved.</p>
+</div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
