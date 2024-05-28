@@ -1,4 +1,3 @@
-/* styles.css */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -65,9 +64,12 @@ input[type="checkbox"] {
     font-size: 14px;
 }
 
+.social-login {
+    text-align: center; 
+}
+
 .or {
-    text-align: center;
-    margin-bottom: 20px;
+    margin: 20px 0; 
     font-weight: bold;
 }
 
@@ -96,12 +98,11 @@ input[type="checkbox"] {
 
 .google {
     background-color: #ea4335;
-
 }
-.google a{
+
+.google a {
     color: #fff;
     text-decoration: none;
-
 }
 
 .apple {
@@ -111,13 +112,33 @@ input[type="checkbox"] {
 header {
     margin: 0;
 }
-header div{
+
+header div {
     padding: 2rem;
 }
+
 .container {
     margin-top: 50px;
 }
-.nav-link-sign{
-   border: 1px solid ;
-   border-color: rgb(33, 37, 41);
+
+.nav-link-sign {
+    border: 1px solid;
+    border-color: rgb(33, 37, 41);
+}
+
+.form-check {
+    display: flex;
+    align-items: center;
+}
+
+.form-check-input {
+    margin-top: 0; 
+    margin-bottom: 0; 
+}
+
+.form-check-label {
+    margin-left: 5px;
+    margin-bottom: 0; 
+    display: flex;
+    align-items: center; 
 }
