@@ -1,0 +1,16 @@
+{
+  "teams": [
+    {
+      "id": "5270",
+      "name": "Henry Sqaud",
+      "playerCount": "11",
+      "playerCaptain": "Henry "
+    },
+    {
+      "id": "a2d6",
+      "name": "David Sqaud",
+      "playerCount": "11",
+      "playerCaptain": "Davido Vrhovac"
+    }
+  ]
+}
