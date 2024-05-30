@@ -1,3 +1,10 @@
 {
-  "teams": []
+  "teams": [
+    {
+      "id": "e68f",
+      "name": "Mexikaser",
+      "playerCount": "10",
+      "playerCaptain": "Henry"
+    }
+  ]
 }
