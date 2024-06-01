@@ -1,16 +1,24 @@
 {
   "teams": [
     {
-      "id": "18bd",
-      "name": "Henry",
+      "id": "959f",
+      "name": "Hallo ",
       "playerCount": "10",
-      "playerCaptain": "Anigger"
-    },
-    {
-      "id": "b23f",
-      "name": "",
-      "playerCount": "",
-      "playerCaptain": ""
+      "playerCaptain": "Mexikaser Real Time Database",
+      "players": [
+        {
+          "number": "1456",
+          "name": "Henriko Marikone"
+        },
+        {
+          "number": "1456",
+          "name": "Henriko Marikone"
+        },
+        {
+          "number": "1456",
+          "name": "Henriko Marikone"
+        }
+      ]
     }
   ]
 }

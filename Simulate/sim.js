@@ -16,7 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
         let squadData = {
             name: squadname,
             playerCount: playercount,
-            playerCaptain: playercaptian
+            playerCaptain: playercaptian,
+            players: []
         };
         fetch(url, {
             method: 'POST',
