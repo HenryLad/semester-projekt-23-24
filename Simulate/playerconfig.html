@@ -9,7 +9,8 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="simulate.css">
     <link rel="icon" href="../Images/picture_web_logo.jpg" />
-    <script src="sim.js"></script>
+    <script src="playerconfig.js" defer></script>
+    <script src="../LogedIn/nav-bar.js" defer></script>
     <style>
         header {
             margin: 0;
@@ -37,6 +38,25 @@
             border: 1px solid rgb(33, 37, 41);
             border-radius: 5px;
             text-align: center;
+        }
+        .player-div {
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 10px 0;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            color: #333;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+        }
+
+        .player-div::before {
+            content: '\1F3C3'; /* Running emoji */
+            margin-right: 10px;
+            font-size: 20px;
         }
     </style>
 </head>
@@ -66,7 +86,7 @@
                         <div class="dropdown">
                             <button class="btn btn-primary dropdown-toggle nav-link-sign style-dropdown-btn"
                                 type="button" data-bs-toggle="dropdown" aria-expanded="false" id="btn-profile">
-
+                                
                             </button>
                             <ul class="dropdown-menu">
                                 <li><a href="../myProfile/index.html" class="dropdown-item">My Profile</a></li>
@@ -87,7 +107,7 @@
 
     <div class="container">
         <h2>Enter Number and Name</h2>
-        <form>
+        <form id="playerForm">
             <div class="form-group">
                 <label for="number">Number:</label>
                 <input type="number" class="form-control" id="cfg_number" placeholder="Enter number" required>
@@ -105,7 +125,6 @@
                 Players
             </div>
             <div class="card-body" id="body_player_add">
-
             </div>
         </div>
     </div>
@@ -113,6 +132,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-    <script src="../app.js" defer></script>
 </body>
 </html>
