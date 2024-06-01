@@ -2,13 +2,13 @@ let players_number = [];
 let players = [];
 const url = "http://localhost:8000/teams";
 
-document.getElementById('btn_player_submit').addEventListener('click', async function(event) {
+document.getElementById('btn_player_submit').addEventListener('click', async function (event) {
    event.preventDefault();
-   
+
    let response = await fetch(url);
    let data = await response.json();
    let team = data.find(team => team.id == localStorage.getItem('current_id'));
-   
+
    var number = document.getElementById('cfg_number').value;
    var name = document.getElementById('cfg_name').value;
    let id = localStorage.getItem('current_id');
@@ -22,11 +22,11 @@ document.getElementById('btn_player_submit').addEventListener('click', async fun
       alert("Number already in use. Please choose another one");
       return;
    } else {
-      players_number.push(number); 
-      players.push({number: number, name: name});
+      players_number.push(number);
+      players.push({ number: number, name: name });
 
       // Add the new player to the team's players array
-      team.players.push({number: number, name: name});
+      team.players.push({ number: number, name: name });
 
       // Send a PUT request to the server with the updated team data
       let putResponse = await fetch(`${url}/${id}`, {
@@ -43,19 +43,32 @@ document.getElementById('btn_player_submit').addEventListener('click', async fun
       }
 
       let putResult = await putResponse.json();
-      alert(putResult);
-   }
+      alert(JSON.stringify(putResult));
 
-   var playerDiv = document.createElement('div');
-   playerDiv.classList.add('player-div');
-   playerDiv.textContent = 'Player ' + number + ': ' + name;
-   document.getElementById('body_player_add').appendChild(playerDiv);
+      // Refresh the player list to reflect the updated data from the server
+      await display_player();
+   }
 });
 
-function display_player()
-{
-   let players = getPlayers(localStorage.getItem('current_id'));
-   console.log(players);
+async function display_player() {
+   // Clear the existing player list in the DOM
+   let elements = document.getElementsByClassName('player-div');
+   while (elements.length > 0) {
+      elements[0].parentNode.removeChild(elements[0]);
+   }
+
+   // Fetch the updated player data from the server
+   let playersData = await getPlayers(localStorage.getItem('current_id'));
+   players_number = playersData.map(player => player.number);
+   players = playersData;
+
+   // Populate the DOM with the updated player list
+   for (let i = 0; i < playersData.length; i++) {
+      var playerDiv = document.createElement('div');
+      playerDiv.classList.add('player-div');
+      playerDiv.textContent = 'Player ' + playersData[i].number + ': ' + playersData[i].name;
+      document.getElementById('body_player_add').appendChild(playerDiv);
+   }
 }
 
 async function getPlayers(teamId) {
@@ -70,4 +83,4 @@ async function getPlayers(teamId) {
    return team ? team.players : [];
 }
 
-addEventListener('DOMContentLoaded', display_player());
+document.addEventListener('DOMContentLoaded', display_player);
