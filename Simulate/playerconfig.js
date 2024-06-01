@@ -43,7 +43,7 @@ document.getElementById('btn_player_submit').addEventListener('click', async fun
       }
 
       let putResult = await putResponse.json();
-      alert(JSON.stringify(putResult));
+      console.log(putResult);
 
       // Refresh the player list to reflect the updated data from the server
       await display_player();
@@ -67,8 +67,16 @@ async function display_player() {
       var playerDiv = document.createElement('div');
       playerDiv.classList.add('player-div');
       playerDiv.textContent = 'Player ' + playersData[i].number + ': ' + playersData[i].name;
+  
+      // Create a button, set its id, and append it to the playerDiv
+      var deleteButton = document.createElement('button');
+      deleteButton.id = 'btn-delete';
+      deleteButton.classList.add('btn-delete', 'btn', 'btn-danger');
+      deleteButton.textContent = 'Delete';
+      playerDiv.appendChild(deleteButton);
+  
       document.getElementById('body_player_add').appendChild(playerDiv);
-   }
+  }
 }
 
 async function getPlayers(teamId) {
