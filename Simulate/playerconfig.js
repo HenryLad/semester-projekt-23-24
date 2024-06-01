@@ -5,7 +5,7 @@ document.getElementById('playerForm').addEventListener('submit', async function(
 
    var number = document.getElementById('cfg_number').value;
    var name = document.getElementById('cfg_name').value;
-   if(players.includes(number)){alert("Number already in use. Please choose an other one")}
+   if(players.includes(number)){alert("Number already in use. Please choose an other one"); return;}
    else{players.push(number)}
    
    
