@@ -142,3 +142,8 @@ header div {
     display: flex;
     align-items: center; 
 }
+
+.google:hover{
+    color: white;
+    background-color: #ea4335;
+}
