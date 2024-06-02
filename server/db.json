@@ -1,22 +1,21 @@
 {
   "teams": [
     {
-      "id": "959f",
-      "name": "Hallo ",
-      "playerCount": "10",
-      "playerCaptain": "Mexikaser Real Time Database",
+      "id": "c29e",
+      "name": "halo",
+      "playerCount": "11",
+      "playerCaptain": "12",
+      "players": []
+    },
+    {
+      "id": "4480",
+      "name": "Hallo",
+      "playerCount": "11",
+      "playerCaptain": "11",
       "players": [
         {
-          "number": "11",
-          "name": "H"
-        },
-        {
-          "number": "",
-          "name": "121"
-        },
-        {
-          "number": "1209",
-          "name": "Neymar Jr"
+          "number": "1",
+          "name": "ddd"
         }
       ]
     }
