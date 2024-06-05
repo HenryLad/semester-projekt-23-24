@@ -42,3 +42,9 @@ body {
    margin-top: 10px;
    color: #0072ff;
 }
+#go-back{
+   border: none;
+   font-size: large;
+   background: none;
+   font-weight: bold;
+}

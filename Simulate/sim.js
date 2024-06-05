@@ -55,7 +55,7 @@ async function display_players() {
     for (let result of data) {
         squad.innerHTML += `
             <div class="row">
-                <div class="col-12 player-margin" data-id="${result.id}">
+                <div class="col-12 player-margin" data-id="${result.id}" style="margin-top: 2rem">
                     <div class="card">
                         <div class="card-header">
                             <h4 class="card-title">${result.name}</h4>
