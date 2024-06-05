@@ -6,8 +6,12 @@ document.addEventListener("DOMContentLoaded", () => {
         window.location.href = "../SignIn.html";
     }
 
+
     display_players();
 
+    document.getElementById('sim-game').addEventListener('click', () => {
+        window.location.href = "./sim_game/index.html"
+    });
     document.getElementById("addsquad").addEventListener("click", async function (event) {
         event.preventDefault();
         let squadname = document.getElementById("squadName").value;
@@ -46,12 +50,12 @@ async function display_players() {
     let response = await fetch(url);
     let data = await response.json();
     let squad = document.getElementById("card-body");
-    squad.innerHTML = ""; // Clear existing content
+    squad.innerHTML = ""; 
 
     for (let result of data) {
         squad.innerHTML += `
             <div class="row">
-                <div class="col-12" data-id="${result.id}">
+                <div class="col-12 player-margin" data-id="${result.id}">
                     <div class="card">
                         <div class="card-header">
                             <h4 class="card-title">${result.name}</h4>

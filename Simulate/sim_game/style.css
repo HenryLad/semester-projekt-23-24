@@ -1,0 +1,44 @@
+body {
+   background-color: #f8f9fa;
+}
+.container {
+   margin-top: 20px;
+}
+.result-card {
+   background-color: white;
+   border-radius: 8px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   margin-bottom: 20px;
+   padding: 20px;
+}
+.result-header {
+   background: linear-gradient(to right, #00c6ff, #0072ff);
+   color: white;
+   text-align: center;
+   padding: 10px;
+   border-radius: 8px 8px 0 0;
+}
+.result-body {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 10px 0;
+}
+.team {
+   display: flex;
+   align-items: center;
+}
+.team img {
+   width: 40px;
+   height: 40px;
+   margin-right: 10px;
+}
+.score {
+   font-size: 1.5rem;
+   font-weight: bold;
+}
+.highlight {
+   text-align: center;
+   margin-top: 10px;
+   color: #0072ff;
+}

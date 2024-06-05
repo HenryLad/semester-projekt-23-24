@@ -1,23 +1,19 @@
 {
   "teams": [
     {
-      "id": "c29e",
-      "name": "halo",
+      "id": "e03a",
+      "name": "Hallo",
       "playerCount": "11",
-      "playerCaptain": "12",
+      "playerCaptain": "henry",
       "players": []
     },
     {
-      "id": "4480",
-      "name": "Hallo",
+      "id": "1010",
+      "name": "Henry Sqaud",
       "playerCount": "11",
-      "playerCaptain": "11",
-      "players": [
-        {
-          "number": "1",
-          "name": "ddd"
-        }
-      ]
+      "playerCaptain": "hakll",
+      "players": []
     }
-  ]
+  ],
+  "scores": []
 }
