@@ -1,51 +1,28 @@
 {
   "teams": [
     {
-      "id": "1010",
-      "name": "Henry Sqaud",
+      "id": "7254",
+      "name": "David Sqaud",
       "playerCount": "11",
-      "playerCaptain": "Hello",
+      "playerCaptain": "Mark",
       "players": [
         {
           "number": "11",
-          "name": "halöp"
+          "name": "Mark"
+        },
+        {
+          "number": "10",
+          "name": "David"
         }
       ]
     },
     {
-      "id": "1361",
-      "name": "Mutter Squad",
+      "id": "dfee",
+      "name": "Henry Sqaud",
       "playerCount": "11",
-      "playerCaptain": "Mbappe",
-      "players": [
-        {
-          "number": "7",
-          "name": "Mbappe"
-        }
-      ]
+      "playerCaptain": "Anigger",
+      "players": []
     }
   ],
-  "scores": [
-    {
-      "id": "300b",
-      "team_1": "Mutter Squad",
-      "team_2": "Henry Sqaud",
-      "score": "2 : 3",
-      "date": "05.06.2024, 17:42"
-    },
-    {
-      "id": "a901",
-      "team_1": "Henry Sqaud",
-      "team_2": "Mutter Squad",
-      "score": "10 : 0",
-      "date": "05.06.2024, 17:42"
-    },
-    {
-      "id": "41d5",
-      "team_1": "Mutter Squad",
-      "team_2": "Henry Sqaud",
-      "score": "1 : 2",
-      "date": "05.06.2024, 17:42"
-    }
-  ]
+  "scores": []
 }

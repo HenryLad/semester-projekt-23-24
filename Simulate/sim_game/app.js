@@ -191,21 +191,12 @@ async function addScore(data) {
 document.getElementById('go-back').addEventListener('click', () => {
     window.location.href = "../simulate.html";
 });
-async function clear_teams() {
-    let response = await fetch(url_scores, {
-        method: 'DELETE',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-    });
-
-    if (response.ok) {
-        display_score();
-    } else {
-        console.error('Error:', response.statusText);
-    }
-}
 document.getElementById('clear-btn').addEventListener('click', async () => {
     let resultdiv = document.getElementById('result-div');
-    await clear_teams();
+    // Task use fetch to delete all scores from json server
+    const response = await fetch(url_scores);
+    let data = await response.json();
+    for (let opt of data) {
+        deleteScore(opt.id);
+    }
 });
