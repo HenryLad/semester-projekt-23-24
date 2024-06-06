@@ -4,7 +4,7 @@ let randomPlayer;
 let attempts = 8;
 
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('') 
+    fetch('http://localhost:8000/players') 
         .then(response => response.json())
         .then(data => {
             players = data;
