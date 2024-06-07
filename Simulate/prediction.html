@@ -83,31 +83,33 @@
         </div>
     </nav>
 
-    <main class="container py-4">
-        <!-- Your main content here -->
+    <main id="main" class="py-4">
         <h2>Predict the Match Outcome</h2>
-        <div class="container" id="prediction-form">
+        <div id="prediction-form">
             <form id="predictor">
-                <label for="match-select">Select Match:</label>
+                <div class="margin">
+                    <label for="match-select">Select Match:</label>
+                </div>
                 <div class="col-4">
                     <select class="form-select" id="match-select" required>
                         <option disabled selected>Select a match</option>
                     </select>
                 </div>
-                <label for="prediction">Your Prediction:</label>
-                <div id="prediction-container" class="col-4">
+                <div class="margin">
+                    <label for="prediction">Your Prediction:</label>
+                </div>
+                <div id="prediction-form-container" class="col-4">
                     <input class="form-control" id="prediction" placeholder="e.g. 2-1" required>
                     <button class="btn btn-primary" id="submitPrediction">Submit Prediction</button>
                 </div>
             </form>
         </div>
-        <div class="container" id="prediction-display-container">
+        <div id="prediction-display-container">
             <h2>Predictions</h2>
             <button class="btn btn-primary" id="clearPredictions">Clear Predictions</button>
         </div>
-        <div class="container" id="predictions">
-            <!-- Popular predictions will be dynamically inserted here -->
-        </div>
+        <ul class="container" id="predictions">
+        </ul>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

@@ -1,8 +1,5 @@
 const matchesUrl = 'http://localhost:8000/matches'
-const predictionsUrl = 'http://localhost:8000/predictions'
 let matchName = '';
-let count = 0;
-const predictionCount = {};
 
 const matchSelect = document.getElementById('match-select');
 const predictionForm = document.getElementById('predictor');
@@ -21,96 +18,86 @@ async function fetchMatches() {
     }
 }
 
-async function storePrediction(matchId, prediction, count) {
-    const response = await fetch(predictionsUrl, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            id: matchId,
+async function storePrediction(matchId, prediction) {
+    const response = await fetch(`${matchesUrl}/${matchId}`);
+    if (!response.ok) {
+        alert("Failed to fetch the match data. Please select a match and try again.");
+        return false;
+    }
+    const match = await response.json();
+
+    const existingPrediction = match.predictions.find(p => p.prediction === prediction);
+    if (existingPrediction) {
+        existingPrediction.votes += 1;
+    } else {
+        const newPrediction = {
             prediction: prediction,
-            count: count
-        }),
-    });
+            votes: 1
+        };
+        match.predictions.push(newPrediction);
+    }
 
-    return response.ok;
-}
-
-async function updatePrediction(matchId, prediction, count) {
-    const response = await fetch(predictionsUrl, {
+    const updateResponse = await fetch(`${matchesUrl}/${matchId}`, {
         method: 'PATCH',
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            id: matchId,
-            prediction: prediction,
-            count: count
+            predictions: match.predictions
         }),
     });
 
-    return response.ok;
+    return updateResponse.ok;
 }
-
 
 async function displayPopularPredictions() {
+    const response = await fetch(matchesUrl);
+    const matches = await response.json();
 
-    const response = await fetch(predictionsUrl);
-    const predictions = await response.json();
+    popularPredictions.innerHTML = '';
 
-
-    for (const prediction of predictions) {
-        const matchId = prediction.matchId;
-        const pred = prediction.prediction;
-        if (!predictionCount[matchId]) {
-            predictionCount[matchId] = {};
+    for (const match of matches) {
+        const predictions = match.predictions;
+        const matchName = `${match.team1} vs ${match.team2} (${match.date})`;
+        for (const prediction of predictions) {
+            popularPredictions.innerHTML += `<li><h5>Match: ${matchName}</h5> Prediction: ${prediction.prediction} (Votes: ${prediction.votes})</li>`;
         }
-        if (!predictionCount[matchId][pred]) {
-            predictionCount[matchId][pred] = 0;
-        }
-        predictionCount[matchId][pred] += 1;
-    }
-
-    for (const matchId in predictionCount) {
-        const matchPredictions = predictionCount[matchId];
-        const sortedPredictions = Object.keys(matchPredictions).sort((a, b) => matchPredictions[b] - matchPredictions[a]);
-
-        const matchElement = document.createElement('div');
-        matchElement.className = 'match-predictions';
-        matchElement.innerHTML = `<h4>Match: ${matchName}</h4>`;
-
-        for (const pred of sortedPredictions) {
-            const predElement = document.createElement('p');
-            predElement.textContent = `${pred}: ${matchPredictions[pred]} votes`;
-            matchElement.appendChild(predElement);
-        }
-
-        popularPredictions.appendChild(matchElement);
     }
 }
 
-
 async function clearPredictions() {
-    await fetch(predictionsUrl, {
-        method: 'DELETE',
-    });
+    const response = await fetch(matchesUrl);
+    const matches = await response.json();
+
+    for (const match of matches) {
+        await fetch(`${matchesUrl}/${match.id}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                predictions: []
+            }),
+        });
+    }
 
     popularPredictions.innerHTML = '';
-    predictionCount = {};
 }
 
 document.getElementById('submitPrediction').addEventListener('click', (event) => {
     event.preventDefault();
-    count++;
     const matchId = matchSelect.value;
     const prediction = document.getElementById('prediction').value;
-    if (count === 0) {
-        storePrediction(matchId, prediction, count);
+    const predictionRegex = /^\d+-\d+$/;
+    if (!prediction.match(predictionRegex)) {
+        alert("Invalid prediction format. Please enter a prediction in the format 'score - score'.");
+        return;
     }
-    else {
-        updatePrediction(matchId, prediction, count);
-    }
+    storePrediction(matchId, prediction).then(success => {
+        if (success) {
+            displayPopularPredictions();
+        }
+    });
 });
 
 document.getElementById('clearPredictions').addEventListener('click', (event) => {

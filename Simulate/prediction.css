@@ -1,4 +1,4 @@
-#prediction-container{
+#prediction-form-container{
     display: flex;
     margin: 0 0 2rem 0;
     gap: 1rem;
@@ -6,6 +6,47 @@
 
 #prediction-display-container{
     display: flex;
-    margin: 1rem 0 1rem 0;
+    justify-content: center;
+    margin: 4rem 0 1rem 0;
     gap: 1rem;
+}
+
+#predictions li{
+    list-style-type: none;
+    background-color: white;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 0.5rem;
+}
+
+div.row{
+    margin-top: 2rem;
+}
+
+#main{
+    margin: 2rem;
+    padding: 2rem;
+    background-color: #6c757dea;
+
+}
+
+.margin{
+    margin-top: 2rem;
+}
+
+body{
+    background-image: url(../Images/picture_prediction_field.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+label{
+    color: black;
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+h2{
+    color: black;
 }

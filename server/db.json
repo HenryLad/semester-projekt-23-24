@@ -399,27 +399,87 @@
   "matches": [
     {
       "id": "1",
-      "team1": "Bayern Munich",
-      "team2": "Borussia Dortmund",
-      "score": "2-1",
-      "date": "2022-10-01"
+      "team1": "Germany",
+      "team2": "Scotland",
+      "date": "14-06-2024; 21:00",
+      "predictions": []
     },
     {
       "id": "2",
-      "team1": "Atletico Madrid",
-      "team2": "Real Madrid",
-      "score": "1-1",
-      "date": "2022-10-02"
+      "team1": "Hungary",
+      "team2": "Switzerland",
+      "date": "15-06-2024; 15:00",
+      "predictions": []
     },
     {
       "id": "3",
-      "team1": "Manchester City",
-      "team2": "Liverpool",
-      "score": "3-2",
-      "date": "2022-10-03"
+      "team1": "Spain",
+      "team2": "Croatia",
+      "date": "15-06-2024; 18:00",
+      "predictions": []
+    },
+    {
+      "id": "4",
+      "team1": "Italy",
+      "team2": "Albania",
+      "date": "15-06-2024; 21:00",
+      "predictions": []
+    },
+    {
+      "id": "5",
+      "team1": "Poland",
+      "team2": "Netherlands",
+      "date": "16-06-2024; 15:00",
+      "predictions": []
+    },
+    {
+      "id": "6",
+      "team1": "Slovenia",
+      "team2": "Denmark",
+      "date": "16-06-2024; 18:00",
+      "predictions": []
+    },
+    {
+      "id": "7",
+      "team1": "Serbia",
+      "team2": "England",
+      "date": "16-06-2024; 21:00",
+      "predictions": []
+    },
+    {
+      "id": "8",
+      "team1": "Romania",
+      "team2": "Ukraine",
+      "date": "17-06-2024; 15:00",
+      "predictions": []
+    },
+    {
+      "id": "9",
+      "team1": "Belgium",
+      "team2": "Slovakia",
+      "date": "17-06-2024; 18:00",
+      "predictions": []
+    },
+    {
+      "id": "10",
+      "team1": "Austria",
+      "team2": "France",
+      "date": "17-06-2024; 21:00",
+      "predictions": []
+    },
+    {
+      "id": "11",
+      "team1": "Turkey",
+      "team2": "Georgia",
+      "date": "18-06-2024; 18:00",
+      "predictions": []
+    },
+    {
+      "id": "12",
+      "team1": "Portugal",
+      "team2": "Czech Republic",
+      "date": "18-06-2024; 21:00",
+      "predictions": []
     }
-  ],
-  "predictions": [
-   
   ]
 }
