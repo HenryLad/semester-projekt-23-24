@@ -11,3 +11,37 @@
     background-color: rgb(33, 37, 41);
     border: none;
 }
+
+.player-attributes {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.attribute {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: grey;
+    color: white;
+    position: relative;
+}
+
+.attribute.correct {
+    background-color: green;
+}
+
+.flag-icon, .club-logo {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.club-logo {
+    width: 30px; 
+    height: 30px; 
+}
+
