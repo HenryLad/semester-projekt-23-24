@@ -10,13 +10,12 @@ document.addEventListener('DOMContentLoaded', () => {
             randomPlayer = players[Math.floor(Math.random() * players.length)];
             document.getElementById('guessButton').disabled = false;
 
-           
             $("#guessInput").autocomplete({
                 source: function(request, response) {
                     const results = $.ui.autocomplete.filter(players.map(p => p.name), request.term);
-                    response(results.slice(0, 10)); 
+                    response(results.slice(0, 10));
                 },
-                minLength: 1 
+                minLength: 1
             });
         })
         .catch(error => console.error('Error fetching player data:', error));
@@ -54,26 +53,28 @@ document.getElementById('guessButton').addEventListener('click', () => {
 
     attemptsRemaining.textContent = `Attempts remaining: ${attempts}`;
 
-    const checkIcon = (condition) => condition ? '<i class="fas fa-check-circle" style="color: green;"></i>' : '<i class="fas fa-times-circle" style="color: red;"></i>';
+    const ageDifference = guessedPlayer.age - randomPlayer.age;
+    const ageArrow = ageDifference > 0 ? '<i class="fas fa-arrow-up"></i>' : '<i class="fas fa-arrow-down"></i>';
+    const ageClass = guessedPlayer.age === randomPlayer.age ? 'correct' : 'incorrect';
 
     const guessedPlayerDiv = document.createElement('div');
     guessedPlayerDiv.innerHTML = `
         <p><strong>${guessedPlayer.name}</strong></p>
         <div class="player-attributes">
             <span class="attribute ${guessedPlayer.nationality === randomPlayer.nationality ? 'correct' : 'incorrect'}">
-                <i class="fas fa-flag"></i> <img src="https://countryflagsapi.com/png/${guessedPlayer.nationality}" alt="${guessedPlayer.nationality}" class="flag-icon">
+                <img src="${guessedPlayer.nationality}" alt="${guessedPlayer.nationality}" class="flag-icon">
             </span>
-            <span class="attribute ${guessedPlayer.age === randomPlayer.age ? 'correct' : 'incorrect'}">
-                <i class="fas fa-birthday-cake"></i> ${guessedPlayer.age > randomPlayer.age ? '<i class="fas fa-arrow-up"></i>' : '<i class="fas fa-arrow-down"></i>'}
+            <span class="attribute ${ageClass}">
+                ${guessedPlayer.age} ${ageArrow}
             </span>
             <span class="attribute ${guessedPlayer.position === randomPlayer.position ? 'correct' : 'incorrect'}">
-                <i class="fas fa-futbol"></i> ${guessedPlayer.position}
+                ${guessedPlayer.position}
             </span>
             <span class="attribute ${guessedPlayer.league === randomPlayer.league ? 'correct' : 'incorrect'}">
-                <i class="fas fa-trophy"></i> ${guessedPlayer.league}
+                <img class="league-logo" src="${guessedPlayer.league}" />
             </span>
             <span class="attribute ${guessedPlayer.club === randomPlayer.club ? 'correct' : 'incorrect'}">
-                <i class="fas fa-shield-alt"></i> <img src="${guessedPlayer.clubLogo}" alt="${guessedPlayer.club}" class="club-logo">
+                <img src="${guessedPlayer.club}" alt="${guessedPlayer.club}" class="club-logo">
             </span>
         </div>
         <hr>
