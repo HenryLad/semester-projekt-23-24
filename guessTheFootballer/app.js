@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(response => response.json())
         .then(data => {
             players = data;
-            randomPlayer = players[Math.floor(Math.random() * players.length)];
+            generateRandomPlayer();
             document.getElementById('guessButton').disabled = false;
 
             $("#guessInput").autocomplete({
@@ -79,7 +79,23 @@ document.getElementById('guessButton').addEventListener('click', () => {
         </div>
         <hr>
     `;
-    guessedPlayersDiv.appendChild(guessedPlayerDiv);
+
+    guessedPlayersDiv.prepend(guessedPlayerDiv); 
 
     document.getElementById('guessInput').value = '';
 });
+
+document.getElementById('retryButton').addEventListener('click', () => {
+    attempts = 8;
+    document.getElementById('guessButton').disabled = false;
+    document.getElementById('feedback').innerHTML = '';
+    document.getElementById('attemptsRemaining').textContent = `Attempts remaining: ${attempts}`;
+    document.getElementById('guessedPlayers').innerHTML = '';
+    document.getElementById('guessInput').value = '';
+    generateRandomPlayer();
+});
+
+function generateRandomPlayer() {
+    randomPlayer = players[Math.floor(Math.random() * players.length)];
+    console.log('Random player:', randomPlayer);
+}

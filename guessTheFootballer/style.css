@@ -35,11 +35,12 @@
     background-color: green;
 }
 
-
 .flag-icon,
 .club-logo,
 .league-logo {
     width: 50px;
     height: 50px;
-    border-radius: 50%;
+    object-fit: contain;
+    object-position: center;
+    padding: 5px; 
 }
