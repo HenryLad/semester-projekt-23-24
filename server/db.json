@@ -360,16 +360,7 @@
       "team1": "Germany",
       "team2": "Scotland",
       "date": "14-06-2024; 21:00",
-      "predictions": [
-        {
-          "prediction": "2-1",
-          "votes": 2
-        },
-        {
-          "prediction": "3-3",
-          "votes": 1
-        }
-      ]
+      "predictions": []
     },
     {
       "id": "2",
@@ -390,12 +381,7 @@
       "team1": "Italy",
       "team2": "Albania",
       "date": "15-06-2024; 21:00",
-      "predictions": [
-        {
-          "prediction": "445151-13141",
-          "votes": 1
-        }
-      ]
+      "predictions": []
     },
     {
       "id": "5",
