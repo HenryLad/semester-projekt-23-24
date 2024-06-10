@@ -1,5 +1,13 @@
 {
-  "teams": [],
+  "teams": [
+    {
+      "id": "b092",
+      "name": "Hallo",
+      "playerCount": "11",
+      "playerCaptain": "NineElven",
+      "players": []
+    }
+  ],
   "players": [
     {
       "name": "Manuel Neuer",
